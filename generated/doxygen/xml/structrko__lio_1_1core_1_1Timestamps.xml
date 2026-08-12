@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structrko__lio_1_1core_1_1Timestamps" kind="struct" language="C++" prot="public">
+    <compoundname>rko_lio::core::Timestamps</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1Timestamps_1ab049615468920792fdb40b2f597a75cd" prot="public" static="no" mutable="no">
+        <type>Nsec</type>
+        <definition>Nsec rko_lio::core::Timestamps::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <qualifiedname>rko_lio::core::Timestamps::min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" line="38" column="8" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1Timestamps_1a815937b2994206648bfe5c054b06be6d" prot="public" static="no" mutable="no">
+        <type>Nsec</type>
+        <definition>Nsec rko_lio::core::Timestamps::max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <qualifiedname>rko_lio::core::Timestamps::max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" line="39" column="8" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1Timestamps_1abfc3e14a796873bf311e1ae008b51c3c" prot="public" static="no" mutable="no">
+        <type>TimestampVector</type>
+        <definition>TimestampVector rko_lio::core::Timestamps::per_point</definition>
+        <argsstring></argsstring>
+        <name>per_point</name>
+        <qualifiedname>rko_lio::core::Timestamps::per_point</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" line="40" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" line="37" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" bodystart="37" bodyend="41"/>
+    <listofallmembers>
+      <member refid="structrko__lio_1_1core_1_1Timestamps_1a815937b2994206648bfe5c054b06be6d" prot="public" virt="non-virtual"><scope>rko_lio::core::Timestamps</scope><name>max</name></member>
+      <member refid="structrko__lio_1_1core_1_1Timestamps_1ab049615468920792fdb40b2f597a75cd" prot="public" virt="non-virtual"><scope>rko_lio::core::Timestamps</scope><name>min</name></member>
+      <member refid="structrko__lio_1_1core_1_1Timestamps_1abfc3e14a796873bf311e1ae008b51c3c" prot="public" virt="non-virtual"><scope>rko_lio::core::Timestamps</scope><name>per_point</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

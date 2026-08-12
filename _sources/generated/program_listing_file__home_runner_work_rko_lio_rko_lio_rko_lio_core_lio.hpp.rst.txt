@@ -1,0 +1,116 @@
+
+.. _program_listing_file__home_runner_work_rko_lio_rko_lio_rko_lio_core_lio.hpp:
+
+Program Listing for File lio.hpp
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_rko_lio_rko_lio_rko_lio_core_lio.hpp>` (``/home/runner/work/rko_lio/rko_lio/rko_lio/core/lio.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * MIT License
+    *
+    * Copyright (c) 2025 Meher V.R. Malladi.
+    *
+    * Permission is hereby granted, free of charge, to any person obtaining a copy
+    * of this software and associated documentation files (the "Software"), to deal
+    * in the Software without restriction, including without limitation the rights
+    * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    * copies of the Software, and to permit persons to whom the Software is
+    * furnished to do so, subject to the following conditions:
+    *
+    * The above copyright notice and this permission notice shall be included in all
+    * copies or substantial portions of the Software.
+    *
+    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    * SOFTWARE.
+    */
+   
+   #pragma once
+   #include "util.hpp"
+   #include "voxel_hash_map.hpp"
+   
+   #include <tbb/task_arena.h>
+   
+   namespace rko_lio::core {
+   class LIO {
+   public:
+     struct Config {
+       bool deskew = true;
+   
+       size_t max_iterations = 100;
+   
+       Scalar voxel_size = 1.0;
+   
+       Scalar max_range = 100.0;
+   
+       Scalar min_range = 1.0;
+   
+       Scalar convergence_criterion = 1e-5;
+   
+       Scalar max_correspondence_distance = 0.5;
+   
+       int max_num_threads = 0;
+   
+       bool initialization_phase = false;
+   
+       Scalar max_expected_jerk = 3;
+   
+       bool double_downsample = true;
+   
+       Scalar min_beta = 200;
+     };
+   
+     Config config;
+   
+     VoxelHashMap map;
+   
+     tbb::task_arena arena;
+   
+     State lidar_state;
+   
+     ImuBias imu_bias;
+   
+     Eigen::Vector3s mean_body_acceleration = Eigen::Vector3s::Zero();
+   
+     Eigen::Matrix3s body_acceleration_covariance = Eigen::Matrix3s::Identity();
+   
+     IntervalStats interval_stats;
+   
+     explicit LIO(const Config& config_);
+   
+     void add_imu_measurement(const ImuControl& base_imu);
+   
+     void add_imu_measurement(const Sophus::SE3s& extrinsic_imu2base, const ImuControl& raw_imu);
+   
+     Vector3sVector register_scan(Vector3sVector scan, const TimestampVector& timestamps);
+   
+     Vector3sVector
+     register_scan(const Sophus::SE3s& extrinsic_lidar2base, Vector3sVector scan, const TimestampVector& timestamps);
+   
+     std::vector<std::pair<Nsec, Sophus::SE3s>> poses_with_timestamps;
+   
+     State imu_state;
+   
+   private:
+     void initialize(const Nsec lidar_time);
+   
+     Vector3sVector bootstrap_first_scan(const Vector3sVector& scan, const Nsec current_lidar_time);
+   
+     MotionPrior motion_prior_from_imu(const Nsec current_lidar_time);
+   
+     bool initialized_ = false;
+   
+     Nsec last_real_imu_time_{0};
+   
+     Eigen::Vector3s last_real_base_imu_ang_vel_ = Eigen::Vector3s::Zero();
+   };
+   } // namespace rko_lio::core

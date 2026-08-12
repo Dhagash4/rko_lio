@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The sensor data &#8212; RKO-LIO: Lidar-inertial odometry without sensor-specific modeling</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=f6a572b4" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=adc50415" />
+    <script src="../_static/documentation_options.js?v=71d9d8e6"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ROS" href="ros.html" />
+    <link rel="prev" title="The TL;DR" href="quickstart.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RKO-LIO</a></h1>
+
+
+
+<p class="blurb">Lidar-inertial odometry</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=PRBonn&repo=rko_lio&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros.html">ROS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuring rko_lio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog_literal.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../__LICENSE.html">License</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://index.ros.org/p/rko_lio/">ROS Index</a></li>
+    
+    <li class="toctree-l1"><a href="https://pypi.org/project/rko-lio/">PyPI</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/PRBonn/rko_lio">GitHub</a></li>
+    
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="the-sensor-data">
+<h1>The sensor data<a class="headerlink" href="#the-sensor-data" title="Link to this heading">¶</a></h1>
+<p>RKO-LIO is a LiDAR-inertial odometry system, so unsurprisingly we need both IMU and LiDAR data.
+This page describes what each stream needs to look like, what time synchronisation we expect, and the convention we use for the IMU&lt;-&gt;LiDAR extrinsic.</p>
+<p>Both sensors must be time-synchronised: the timestamps on the data refer to the same clock and are consistent across both streams.
+A bit of latency between when a measurement is sampled and when it arrives in the system is fine – ROS message buffering / Python sequencing handles that – but the timestamps themselves must be aligned.</p>
+<section id="extrinsics-convention">
+<span id="data-extrinsics-convention"></span><h2>Extrinsics &amp; convention<a class="headerlink" href="#extrinsics-convention" title="Link to this heading">¶</a></h2>
+<p>Most importantly, we need the extrinsic calibration between the IMU and LiDAR.</p>
+<p>Throughout this package, we refer to transformations using <code class="docutils literal notranslate"><span class="pre">transform_&lt;from-frame&gt;_to_&lt;to-frame&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">transform_&lt;from-frame&gt;2&lt;to-frame&gt;</span></code>. By this, we mean a transformation that converts a vector expressed in the <code class="docutils literal notranslate"><span class="pre">&lt;from-frame&gt;</span></code> coordinate system to the <code class="docutils literal notranslate"><span class="pre">&lt;to-frame&gt;</span></code> coordinate system.</p>
+<p>Mathematically, this translates to:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v}^{\text{to}} = {}^{\text{to}} \mathbf{T}_{\text{from}}  \mathbf{v}^{\text{from}}\]</div>
+<p>The superscript on the vector indicates the frame in which the vector is expressed, and
+<span class="math notranslate nohighlight">\({}^{\text{to}} \mathbf{T}_{\text{from}}\)</span> corresponds to <code class="docutils literal notranslate"><span class="pre">transform_&lt;from-frame&gt;_to_&lt;to-frame&gt;</span></code>.</p>
+</section>
+<section id="imu">
+<h2>IMU<a class="headerlink" href="#imu" title="Link to this heading">¶</a></h2>
+<p>What we need: timestamp, accelerometer reading (3-axis), gyroscope reading (3-axis). A 6-axis IMU is enough; we don’t use orientation, magnetometer, or noise / bias spec sheets.</p>
+<ul class="simple">
+<li><p><strong>Acceleration</strong> in m/s². If your accelerometer reports g’s, convert before feeding it in.</p></li>
+<li><p><strong>Angular velocity</strong> in rad/s. Convert if your device uses other units.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We follow the typical ROS convention for the IMU (see <a class="reference external" href="https://www.ros.org/reps/rep-0145.html">ROS REP 145</a>).
+At rest in a neutral orientation – IMU and world frames aligned – the IMU <em>z</em> axis points upwards and the accelerometer measures <strong>+g m/s² along +z</strong>.</p>
+</div>
+</section>
+<section id="lidar">
+<h2>LiDAR<a class="headerlink" href="#lidar" title="Link to this heading">¶</a></h2>
+<p>What we need: a point cloud per scan, plus per-point timestamps (seconds) for every point in the scan.
+Per-point timestamps are what lets us deskew the scan against the platform motion during the scan acquisition window.</p>
+<p>If your platform sees rapid or aggressive motion, deskewing matters a lot – enable it (<code class="docutils literal notranslate"><span class="pre">deskew=True</span></code>, the default).
+If you cannot supply per-point timestamps, you must disable deskewing and take the quality hit.</p>
+<p>For ROS, this translates to:</p>
+<ul class="simple">
+<li><p>A timestamp in the <code class="docutils literal notranslate"><span class="pre">PointCloud2</span></code> message header (the standard sensor driver pattern).</p></li>
+<li><p>A time field per point inside the cloud. Common field names are accepted (<code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>, <code class="docutils literal notranslate"><span class="pre">timestamps</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>).</p></li>
+</ul>
+<p>I try to handle the different ways drivers encode per-point timestamps automatically – absolute (already aligned with wall-clock time) vs. relative (offsets from the message header time), seconds vs. nanoseconds, and so on.
+The heuristic is at <a class="reference external" href="https://github.com/PRBonn/rko_lio/blob/master/rko_lio/core/process_timestamps.cpp">rko_lio/core/process_timestamps.cpp</a>.</p>
+<p>If the heuristic can’t classify your data, the system throws a <code class="docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">Error:</span> <span class="pre">TimestampProcessingConfig</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">cover</span> <span class="pre">this</span> <span class="pre">particular</span> <span class="pre">case</span> <span class="pre">of</span> <span class="pre">data</span></code>.
+You can override the behaviour via the <code class="docutils literal notranslate"><span class="pre">timestamps:</span></code> block in your config (Python) or the <code class="docutils literal notranslate"><span class="pre">lidar_timestamps.*</span></code> parameters (ROS) – see <a class="reference internal" href="config.html#config-lidar-timestamps"><span class="std std-ref">Configuring -&gt; LiDAR per-point timestamps</span></a>.
+And if your sensor is different and you think the heuristic should handle it, please open an issue (or a PR).</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="quickstart.html" title="Previous document">The TL;DR</a>
+        </li>
+        <li>
+          <a href="ros.html" title="Next document">ROS</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2026 Meher Malladi.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/pages/data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

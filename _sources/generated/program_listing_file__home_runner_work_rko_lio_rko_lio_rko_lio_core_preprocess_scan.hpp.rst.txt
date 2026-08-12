@@ -1,0 +1,30 @@
+
+.. _program_listing_file__home_runner_work_rko_lio_rko_lio_rko_lio_core_preprocess_scan.hpp:
+
+Program Listing for File preprocess_scan.hpp
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_rko_lio_rko_lio_rko_lio_core_preprocess_scan.hpp>` (``/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <Eigen/Dense>
+   #include <vector>
+   
+   #include "lio.hpp"
+   
+   namespace rko_lio::core {
+   
+   struct PreprocessingResult {
+     Vector3sVector filtered_scan;
+     Vector3sVector keypoints;
+     Vector3sVector map_points; // populated only when config.double_downsample; empty otherwise
+   };
+   
+   // clip and downsample the input cloud
+   PreprocessingResult preprocess_scan(Vector3sVector scan, const LIO::Config& config);
+   
+   } // namespace rko_lio::core

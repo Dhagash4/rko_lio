@@ -1,0 +1,77 @@
+
+.. _file__home_runner_work_rko_lio_rko_lio_rko_lio_core_voxel_down_sample.hpp:
+
+File voxel_down_sample.hpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir__home_runner_work_rko_lio_rko_lio_rko_lio_core>` (``/home/runner/work/rko_lio/rko_lio/rko_lio/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.hpp``)
+-------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__home_runner_work_rko_lio_rko_lio_rko_lio_core_voxel_down_sample.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Eigen/Core``
+
+- ``cstdint``
+
+- ``sophus/se3.hpp``
+
+- ``util.hpp`` (:ref:`file__home_runner_work_rko_lio_rko_lio_rko_lio_core_util.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__home_runner_work_rko_lio_rko_lio_rko_lio_core_preprocess_scan.cpp`
+
+- :ref:`file__home_runner_work_rko_lio_rko_lio_rko_lio_core_voxel_down_sample.cpp`
+
+- :ref:`file__home_runner_work_rko_lio_rko_lio_rko_lio_core_voxel_hash_map.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_rko_lio`
+
+- :ref:`namespace_rko_lio__core`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1VoxelHash`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a20e41beba0ec902b7c78dcdb29899f33`
+

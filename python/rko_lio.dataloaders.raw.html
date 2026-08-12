@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rko_lio.dataloaders.raw module &#8212; RKO-LIO: Lidar-inertial odometry without sensor-specific modeling</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=f6a572b4" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=adc50415" />
+    <script src="../_static/documentation_options.js?v=71d9d8e6"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rko_lio.dataloaders.rosbag module" href="rko_lio.dataloaders.rosbag.html" />
+    <link rel="prev" title="rko_lio.dataloaders.helipr module" href="rko_lio.dataloaders.helipr.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RKO-LIO</a></h1>
+
+
+
+<p class="blurb">Lidar-inertial odometry</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=PRBonn&repo=rko_lio&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pages/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/ros.html">ROS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pages/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/config.html">Configuring rko_lio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/changelog_literal.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../__LICENSE.html">License</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="https://index.ros.org/p/rko_lio/">ROS Index</a></li>
+    
+    <li class="toctree-l1"><a href="https://pypi.org/project/rko-lio/">PyPI</a></li>
+    
+    <li class="toctree-l1"><a href="https://github.com/PRBonn/rko_lio">GitHub</a></li>
+    
+</ul>
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-rko_lio.dataloaders.raw">
+<span id="rko-lio-dataloaders-raw-module"></span><h1>rko_lio.dataloaders.raw module<a class="headerlink" href="#module-rko_lio.dataloaders.raw" title="Link to this heading">¶</a></h1>
+<section id="raw-dataloader">
+<h2>Raw Dataloader<a class="headerlink" href="#raw-dataloader" title="Link to this heading">¶</a></h2>
+<p>A file-based dataloader for datasets laid out as plain files:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dataset_root/
+├── transforms.yaml        # required: 4x4 extrinsics
+├── imu.csv                # required: one IMU file (.csv or .txt)
+├── lidar/                 # required: one .ply per scan, named &lt;ns&gt;.ply
+│   ├── 1662622237000000000.ply
+│   └── ...
+└── rko_lio_settings.yaml  # optional: overrides (see below)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">transforms.yaml</span></code> defines <code class="docutils literal notranslate"><span class="pre">T_imu_to_base</span></code> and <code class="docutils literal notranslate"><span class="pre">T_lidar_to_base</span></code>, each a
+4x4 matrix. See <a class="reference internal" href="../pages/data.html#data-extrinsics-convention"><span class="std std-ref">Extrinsics and conventions</span></a>.</p></li>
+<li><p>The IMU CSV has a header row; default columns are <code class="docutils literal notranslate"><span class="pre">timestamp,</span> <span class="pre">gyro_x,</span> <span class="pre">gyro_y,</span>
+<span class="pre">gyro_z,</span> <span class="pre">accel_x,</span> <span class="pre">accel_y,</span> <span class="pre">accel_z</span></code> (<code class="docutils literal notranslate"><span class="pre">timestamp</span></code> in nanoseconds, rest SI).
+Extra columns are ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lidar/</span></code> holds one <code class="docutils literal notranslate"><span class="pre">.ply</span></code> per scan; the filename stem is the scan
+timestamp in <strong>nanoseconds</strong>. A per-point time field (<code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">timestamps</span></code>,
+<code class="docutils literal notranslate"><span class="pre">timestamp</span></code> or <code class="docutils literal notranslate"><span class="pre">t</span></code>) is used for deskewing when present, with units and
+absolute/relative detected automatically; clouds without one fall back to the
+filename stamp (disable deskewing with <code class="docutils literal notranslate"><span class="pre">deskew:</span> <span class="pre">false</span></code> in a <code class="docutils literal notranslate"><span class="pre">-c</span></code> config).</p></li>
+</ul>
+<p>Defaults can be overridden with an optional <code class="docutils literal notranslate"><span class="pre">rko_lio_settings.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">imu</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">imu.csv</span><span class="w">                            </span><span class="c1"># IMU file, if not auto-detected</span>
+<span class="w">  </span><span class="nt">timestamp_multiplier_to_nanoseconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">   </span><span class="c1"># e.g. 1e9 if the CSV time is in seconds</span>
+<span class="w">  </span><span class="nt">headers</span><span class="p">:</span><span class="w">                                 </span><span class="c1"># map expected name -&gt; your column name</span>
+<span class="w">    </span><span class="nt">timestamp</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_stamp_col</span><span class="w">                </span><span class="c1"># gyro_x/y/z, accel_x/y/z likewise</span>
+<span class="nt">lidar</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lidar</span><span class="w">                              </span><span class="c1"># lidar subfolder name</span>
+<span class="w">  </span><span class="nt">file_suffix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.ply</span>
+<span class="w">  </span><span class="nt">filename_timestamp_multiplier_to_nanoseconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="rko_lio.dataloaders.raw.RawDataLoader">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">rko_lio.dataloaders.raw.</span></span><span class="sig-name descname"><span class="pre">RawDataLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="rko_lio.config.html#rko_lio.config.TimestampConfig" title="rko_lio.config.TimestampConfig"><span class="pre">TimestampConfig</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rko_lio.dataloaders.raw.RawDataLoader" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="rko_lio.dataloaders.raw.RawDataLoader.extrinsics">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">extrinsics</span></span><a class="headerlink" href="#rko_lio.dataloaders.raw.RawDataLoader.extrinsics" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rko_lio.dataloaders.raw.read_point_cloud_file">
+<span class="sig-prename descclassname"><span class="pre">rko_lio.dataloaders.raw.</span></span><span class="sig-name descname"><span class="pre">read_point_cloud_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rko_lio.dataloaders.raw.read_point_cloud_file" title="Link to this definition">¶</a></dt>
+<dd><p>Read a <code class="docutils literal notranslate"><span class="pre">.ply</span></code> point cloud and return <code class="docutils literal notranslate"><span class="pre">(points,</span> <span class="pre">times)</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">points</span></code> is an <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> float64 array. <code class="docutils literal notranslate"><span class="pre">times</span></code> is an <code class="docutils literal notranslate"><span class="pre">(N,)</span></code> float64
+array of per-point times if the cloud has a recognised time field, else
+<code class="docutils literal notranslate"><span class="pre">None</span></code> (units/absolute-vs-relative are left to <code class="docutils literal notranslate"><span class="pre">_process_timestamps</span></code>).</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="rko_lio.dataloaders.helipr.html" title="Previous document">rko_lio.dataloaders.helipr module</a>
+        </li>
+        <li>
+          <a href="rko_lio.dataloaders.rosbag.html" title="Next document">rko_lio.dataloaders.rosbag module</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2026 Meher Malladi.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/python/rko_lio.dataloaders.raw.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

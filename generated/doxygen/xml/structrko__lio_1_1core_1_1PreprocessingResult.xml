@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structrko__lio_1_1core_1_1PreprocessingResult" kind="struct" language="C++" prot="public">
+    <compoundname>rko_lio::core::PreprocessingResult</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1PreprocessingResult_1a5c0cd1e4571393b9f545b5983bdd003e" prot="public" static="no" mutable="no">
+        <type>Vector3sVector</type>
+        <definition>Vector3sVector rko_lio::core::PreprocessingResult::filtered_scan</definition>
+        <argsstring></argsstring>
+        <name>filtered_scan</name>
+        <qualifiedname>rko_lio::core::PreprocessingResult::filtered_scan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" line="10" column="18" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1PreprocessingResult_1a68f669e5e37ebc48860bdcf5ab9446f3" prot="public" static="no" mutable="no">
+        <type>Vector3sVector</type>
+        <definition>Vector3sVector rko_lio::core::PreprocessingResult::keypoints</definition>
+        <argsstring></argsstring>
+        <name>keypoints</name>
+        <qualifiedname>rko_lio::core::PreprocessingResult::keypoints</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" line="11" column="18" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1PreprocessingResult_1ad84282c83927e32f1af50e8338f97881" prot="public" static="no" mutable="no">
+        <type>Vector3sVector</type>
+        <definition>Vector3sVector rko_lio::core::PreprocessingResult::map_points</definition>
+        <argsstring></argsstring>
+        <name>map_points</name>
+        <qualifiedname>rko_lio::core::PreprocessingResult::map_points</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" line="12" column="18" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" line="9" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" bodystart="9" bodyend="13"/>
+    <listofallmembers>
+      <member refid="structrko__lio_1_1core_1_1PreprocessingResult_1a5c0cd1e4571393b9f545b5983bdd003e" prot="public" virt="non-virtual"><scope>rko_lio::core::PreprocessingResult</scope><name>filtered_scan</name></member>
+      <member refid="structrko__lio_1_1core_1_1PreprocessingResult_1a68f669e5e37ebc48860bdcf5ab9446f3" prot="public" virt="non-virtual"><scope>rko_lio::core::PreprocessingResult</scope><name>keypoints</name></member>
+      <member refid="structrko__lio_1_1core_1_1PreprocessingResult_1ad84282c83927e32f1af50e8338f97881" prot="public" virt="non-virtual"><scope>rko_lio::core::PreprocessingResult</scope><name>map_points</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

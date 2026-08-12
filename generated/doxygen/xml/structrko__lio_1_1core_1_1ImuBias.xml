@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structrko__lio_1_1core_1_1ImuBias" kind="struct" language="C++" prot="public">
+    <compoundname>rko_lio::core::ImuBias</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1ImuBias_1afc7a0855fb3b723d0e20e7243c4ec6df" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::ImuBias::accelerometer</definition>
+        <argsstring></argsstring>
+        <name>accelerometer</name>
+        <qualifiedname>rko_lio::core::ImuBias::accelerometer</qualifiedname>
+        <initializer>= Eigen::Vector3s::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="93" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1ImuBias_1ac0116f0168b2985f5b897bae9bb33e3f" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::ImuBias::gyroscope</definition>
+        <argsstring></argsstring>
+        <name>gyroscope</name>
+        <qualifiedname>rko_lio::core::ImuBias::gyroscope</qualifiedname>
+        <initializer>= Eigen::Vector3s::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="94" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="92" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="92" bodyend="95"/>
+    <listofallmembers>
+      <member refid="structrko__lio_1_1core_1_1ImuBias_1afc7a0855fb3b723d0e20e7243c4ec6df" prot="public" virt="non-virtual"><scope>rko_lio::core::ImuBias</scope><name>accelerometer</name></member>
+      <member refid="structrko__lio_1_1core_1_1ImuBias_1ac0116f0168b2985f5b897bae9bb33e3f" prot="public" virt="non-virtual"><scope>rko_lio::core::ImuBias</scope><name>gyroscope</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

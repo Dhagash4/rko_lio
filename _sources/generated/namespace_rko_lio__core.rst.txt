@@ -1,0 +1,98 @@
+
+.. _namespace_rko_lio__core:
+
+Namespace rko_lio::core
+=======================
+
+
+Core namespace containing :ref:`exhale_class_classrko__lio_1_1core_1_1LIO` data structures and state definitions. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1ImuBias`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1ImuControl`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1IntervalStats`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1LIO_1_1Config`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1MotionPrior`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1PreprocessingResult`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1ScopedProfiler_1_1ProfilingInfo`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1State`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1Timer`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1TimestampProcessingConfig`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1Timestamps`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1VoxelBlock`
+
+- :ref:`exhale_struct_structrko__lio_1_1core_1_1VoxelHash`
+
+- :ref:`exhale_class_classrko__lio_1_1core_1_1LIO`
+
+- :ref:`exhale_class_classrko__lio_1_1core_1_1ScopedProfiler`
+
+- :ref:`exhale_class_classrko__lio_1_1core_1_1ScopedProfiler_1_1ProfilingInfoMap`
+
+- :ref:`exhale_class_classrko__lio_1_1core_1_1VoxelHashMap`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1aadd9f1f2b2b1bc30166c6e4e6228841c`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a20e41beba0ec902b7c78dcdb29899f33`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a15ad77d57e545f66d0ff5d0843b797e8`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1ac1fb80bf51f668bd3442bcb18044a57c`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a08e058fe051b31851b65d12f94a28bd8`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a1606d7b4fe5b32a257501d8079c968ca`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a4b33112425f17284c5c3ed6b2fe43119`
+
+- :ref:`exhale_function_namespacerko__lio_1_1core_1a12e21e9c3530270bad001beddeed6572`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespacerko__lio_1_1core_1a5a3f42fcc9e49ecd569baa31d940734f`
+
+- :ref:`exhale_typedef_namespacerko__lio_1_1core_1ad6796ca63cae68d67a3963e198336a1e`
+
+- :ref:`exhale_typedef_namespacerko__lio_1_1core_1ae207837473ce1623f13104a2b12fae3d`
+
+- :ref:`exhale_typedef_namespacerko__lio_1_1core_1adbcc16d5b9b09c370ce6c889b6356bda`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacerko__lio_1_1core_1a54f88ad3bc44e0104ea7c3aae878b3ba`

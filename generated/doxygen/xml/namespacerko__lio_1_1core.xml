@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacerko__lio_1_1core" kind="namespace" language="C++">
+    <compoundname>rko_lio::core</compoundname>
+    <innerclass refid="structrko__lio_1_1core_1_1ImuBias" prot="public">rko_lio::core::ImuBias</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1ImuControl" prot="public">rko_lio::core::ImuControl</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1IntervalStats" prot="public">rko_lio::core::IntervalStats</innerclass>
+    <innerclass refid="classrko__lio_1_1core_1_1LIO" prot="public">rko_lio::core::LIO</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1MotionPrior" prot="public">rko_lio::core::MotionPrior</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1PreprocessingResult" prot="public">rko_lio::core::PreprocessingResult</innerclass>
+    <innerclass refid="classrko__lio_1_1core_1_1ScopedProfiler" prot="public">rko_lio::core::ScopedProfiler</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1State" prot="public">rko_lio::core::State</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1Timer" prot="public">rko_lio::core::Timer</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1TimestampProcessingConfig" prot="public">rko_lio::core::TimestampProcessingConfig</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1Timestamps" prot="public">rko_lio::core::Timestamps</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1VoxelBlock" prot="public">rko_lio::core::VoxelBlock</innerclass>
+    <innerclass refid="structrko__lio_1_1core_1_1VoxelHash" prot="public">rko_lio::core::VoxelHash</innerclass>
+    <innerclass refid="classrko__lio_1_1core_1_1VoxelHashMap" prot="public">rko_lio::core::VoxelHashMap</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacerko__lio_1_1core_1ae207837473ce1623f13104a2b12fae3d" prot="public" static="no">
+        <type>std::vector&lt; Eigen::Vector3s &gt;</type>
+        <definition>using rko_lio::core::Vector3sVector = typedef std::vector&lt;Eigen::Vector3s&gt;</definition>
+        <argsstring></argsstring>
+        <name>Vector3sVector</name>
+        <qualifiedname>rko_lio::core::Vector3sVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="50" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerko__lio_1_1core_1a5a3f42fcc9e49ecd569baa31d940734f" prot="public" static="no">
+        <type>std::chrono::nanoseconds</type>
+        <definition>using rko_lio::core::Nsec = typedef std::chrono::nanoseconds</definition>
+        <argsstring></argsstring>
+        <name>Nsec</name>
+        <qualifiedname>rko_lio::core::Nsec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="52" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerko__lio_1_1core_1ad6796ca63cae68d67a3963e198336a1e" prot="public" static="no">
+        <type>std::vector&lt; Nsec &gt;</type>
+        <definition>using rko_lio::core::TimestampVector = typedef std::vector&lt;Nsec&gt;</definition>
+        <argsstring></argsstring>
+        <name>TimestampVector</name>
+        <qualifiedname>rko_lio::core::TimestampVector</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="53" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacerko__lio_1_1core_1adbcc16d5b9b09c370ce6c889b6356bda" prot="public" static="no">
+        <type>Eigen::Vector3i</type>
+        <definition>using rko_lio::core::Voxel = typedef Eigen::Vector3i</definition>
+        <argsstring></argsstring>
+        <name>Voxel</name>
+        <qualifiedname>rko_lio::core::Voxel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_hash_map.hpp" line="44" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_hash_map.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacerko__lio_1_1core_1a54f88ad3bc44e0104ea7c3aae878b3ba" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr Scalar</type>
+        <definition>constexpr Scalar rko_lio::core::GRAVITY_MAG</definition>
+        <argsstring></argsstring>
+        <name>GRAVITY_MAG</name>
+        <qualifiedname>rko_lio::core::GRAVITY_MAG</qualifiedname>
+        <initializer>= 9.8107</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="57" column="18" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a15ad77d57e545f66d0ff5d0843b797e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrko__lio_1_1core_1_1PreprocessingResult" kindref="compound">PreprocessingResult</ref></type>
+        <definition>PreprocessingResult rko_lio::core::preprocess_scan</definition>
+        <argsstring>(Vector3sVector scan, const LIO::Config &amp;config)</argsstring>
+        <name>preprocess_scan</name>
+        <qualifiedname>rko_lio::core::preprocess_scan</qualifiedname>
+        <param>
+          <type>Vector3sVector</type>
+          <declname>scan</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structrko__lio_1_1core_1_1LIO_1_1Config" kindref="compound">LIO::Config</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.cpp" line="8" column="21" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.cpp" bodystart="8" bodyend="21" declfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/preprocess_scan.hpp" declline="16" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1ac1fb80bf51f668bd3442bcb18044a57c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structrko__lio_1_1core_1_1Timestamps" kindref="compound">Timestamps</ref></type>
+        <definition>Timestamps rko_lio::core::process_timestamps</definition>
+        <argsstring>(const std::vector&lt; double &gt; &amp;raw_timestamps, const Nsec header_stamp, const TimestampProcessingConfig &amp;config)</argsstring>
+        <name>process_timestamps</name>
+        <qualifiedname>rko_lio::core::process_timestamps</qualifiedname>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>raw_timestamps</declname>
+        </param>
+        <param>
+          <type>const Nsec</type>
+          <declname>header_stamp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structrko__lio_1_1core_1_1TimestampProcessingConfig" kindref="compound">TimestampProcessingConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Process raw timestamps and calculates absolute timestamps in nanoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The input timestamps can be either absolute or relative and may be in seconds or nanoseconds. The function automatically detects whether the timestamps are in nanoseconds by checking the duration spread and converts them to nanoseconds accordingly. Then the case of absolute or relative time is disambiguated based on how close (or away) the min or max times are to the header time.</para>
+<para>Alternatively you can specify <computeroutput>force_absolute</computeroutput> or <computeroutput>force_relative</computeroutput> in the config to skip the checks for automatic conversion.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>raw_timestamps</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of raw sensor timestamps as doubles, can be relative or absolute values. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>header_stamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference absolute timestamp corresponding to the scan&apos;s header time. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timestamp specific config to use in processing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A struct containing:<itemizedlist>
+<listitem><para>The computed scan start time (absolute, Nsec),</para>
+</listitem><listitem><para>The computed scan end time (absolute, Nsec),</para>
+</listitem><listitem><para>A vector of all processed point timestamps converted to absolute nanoseconds (TimestampVector). </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the timestamp format or values are unrecognized or unsupported. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.cpp" line="76" column="12" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.cpp" bodystart="76" bodyend="119" declfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/process_timestamps.hpp" declline="76" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a1606d7b4fe5b32a257501d8079c968ca" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr Scalar</type>
+        <definition>constexpr Scalar rko_lio::core::square</definition>
+        <argsstring>(Scalar x)</argsstring>
+        <name>square</name>
+        <qualifiedname>rko_lio::core::square</qualifiedname>
+        <param>
+          <type>Scalar</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="56" column="18" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1aadd9f1f2b2b1bc30166c6e4e6228841c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::gravity</definition>
+        <argsstring>()</argsstring>
+        <name>gravity</name>
+        <qualifiedname>rko_lio::core::gravity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="58" column="24" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a4b33112425f17284c5c3ed6b2fe43119" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+            <defval>double</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr T</type>
+        <definition>constexpr T rko_lio::core::to_seconds</definition>
+        <argsstring>(const Nsec d)</argsstring>
+        <name>to_seconds</name>
+        <qualifiedname>rko_lio::core::to_seconds</qualifiedname>
+        <param>
+          <type>const Nsec</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="62" column="13" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a08e058fe051b31851b65d12f94a28bd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Sophus::SE3s</type>
+        <definition>Sophus::SE3s rko_lio::core::relative_pose_at_time</definition>
+        <argsstring>(const MotionPrior &amp;prior, const Nsec time)</argsstring>
+        <name>relative_pose_at_time</name>
+        <qualifiedname>rko_lio::core::relative_pose_at_time</qualifiedname>
+        <param>
+          <type>const <ref refid="structrko__lio_1_1core_1_1MotionPrior" kindref="compound">MotionPrior</ref> &amp;</type>
+          <declname>prior</declname>
+        </param>
+        <param>
+          <type>const Nsec</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Pose change from start_time to time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="84" column="21" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="84" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a12e21e9c3530270bad001beddeed6572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; Eigen::Vector3s &gt;</type>
+        <definition>std::vector&lt; Eigen::Vector3s &gt; rko_lio::core::voxel_down_sample</definition>
+        <argsstring>(const std::vector&lt; Eigen::Vector3s &gt; &amp;points, const Scalar voxel_size)</argsstring>
+        <name>voxel_down_sample</name>
+        <qualifiedname>rko_lio::core::voxel_down_sample</qualifiedname>
+        <param>
+          <type>const std::vector&lt; Eigen::Vector3s &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>const Scalar</type>
+          <declname>voxel_size</declname>
+        </param>
+        <briefdescription>
+<para>Voxelize point cloud keeping the original coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.cpp" line="37" column="13" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.cpp" bodystart="37" bodyend="50" declfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.hpp" declline="33" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacerko__lio_1_1core_1a20e41beba0ec902b7c78dcdb29899f33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Eigen::Vector3i</type>
+        <definition>Eigen::Vector3i rko_lio::core::point_to_voxel</definition>
+        <argsstring>(const Eigen::Vector3s &amp;point, const Scalar inv_voxel_size)</argsstring>
+        <name>point_to_voxel</name>
+        <qualifiedname>rko_lio::core::point_to_voxel</qualifiedname>
+        <param>
+          <type>const Eigen::Vector3s &amp;</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>const Scalar</type>
+          <declname>inv_voxel_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.hpp" line="35" column="24" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/voxel_down_sample.hpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Core namespace containing <ref refid="classrko__lio_1_1core_1_1LIO" kindref="compound">LIO</ref> data structures and state definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/lio.cpp" line="276" column="1"/>
+  </compounddef>
+</doxygen>

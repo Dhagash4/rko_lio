@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structrko__lio_1_1core_1_1IntervalStats" kind="struct" language="C++" prot="public">
+    <compoundname>rko_lio::core::IntervalStats</compoundname>
+    <includes refid="util_8hpp" local="no">util.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1ad03a2f9676e4eb163dc180dd707fd26c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rko_lio::core::IntervalStats::imu_count</definition>
+        <argsstring></argsstring>
+        <name>imu_count</name>
+        <qualifiedname>rko_lio::core::IntervalStats::imu_count</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Number of IMU samples accumulated during this interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="106" column="7" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1a4e2966e0e84a6b5824b24f3b7a63fc02" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::IntervalStats::angular_velocity_sum</definition>
+        <argsstring></argsstring>
+        <name>angular_velocity_sum</name>
+        <qualifiedname>rko_lio::core::IntervalStats::angular_velocity_sum</qualifiedname>
+        <initializer>= Eigen::Vector3s::Zero()</initializer>
+        <briefdescription>
+<para>Sum of unbiased angular velocity samples. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="109" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1a5edfca29450269f3f4bce4670948d6b0" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::IntervalStats::body_acceleration_sum</definition>
+        <argsstring></argsstring>
+        <name>body_acceleration_sum</name>
+        <qualifiedname>rko_lio::core::IntervalStats::body_acceleration_sum</qualifiedname>
+        <initializer>= Eigen::Vector3s::Zero()</initializer>
+        <briefdescription>
+<para>Sum of gravity-compensated body-frame accelerations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="112" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1af96d42b3db00350ec398257e78606fbf" prot="public" static="no" mutable="no">
+        <type>Eigen::Vector3s</type>
+        <definition>Eigen::Vector3s rko_lio::core::IntervalStats::imu_acceleration_sum</definition>
+        <argsstring></argsstring>
+        <name>imu_acceleration_sum</name>
+        <qualifiedname>rko_lio::core::IntervalStats::imu_acceleration_sum</qualifiedname>
+        <initializer>= Eigen::Vector3s::Zero()</initializer>
+        <briefdescription>
+<para>Sum of unbiased raw IMU accelerations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="115" column="19" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1af1abe33ec46d8cedfad2bc74479a2c46" prot="public" static="no" mutable="no">
+        <type>Scalar</type>
+        <definition>Scalar rko_lio::core::IntervalStats::imu_accel_mag_mean</definition>
+        <argsstring></argsstring>
+        <name>imu_accel_mag_mean</name>
+        <qualifiedname>rko_lio::core::IntervalStats::imu_accel_mag_mean</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Mean magnitude of raw IMU acceleration over the interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="118" column="10" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrko__lio_1_1core_1_1IntervalStats_1af66327f9f7b18f90a4bb6d1a7be904f0" prot="public" static="no" mutable="no">
+        <type>Scalar</type>
+        <definition>Scalar rko_lio::core::IntervalStats::welford_sum_of_squares</definition>
+        <argsstring></argsstring>
+        <name>welford_sum_of_squares</name>
+        <qualifiedname>rko_lio::core::IntervalStats::welford_sum_of_squares</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Variance accumulator for acceleration magnitude using Welford’s method. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="121" column="10" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structrko__lio_1_1core_1_1IntervalStats_1aa21405300771c69fea6e8393362d4903" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rko_lio::core::IntervalStats::update</definition>
+        <argsstring>(const Eigen::Vector3s &amp;unbiased_ang_vel, const Eigen::Vector3s &amp;uncompensated_unbiased_accel, const Eigen::Vector3s &amp;compensated_accel)</argsstring>
+        <name>update</name>
+        <qualifiedname>rko_lio::core::IntervalStats::update</qualifiedname>
+        <param>
+          <type>const Eigen::Vector3s &amp;</type>
+          <declname>unbiased_ang_vel</declname>
+        </param>
+        <param>
+          <type>const Eigen::Vector3s &amp;</type>
+          <declname>uncompensated_unbiased_accel</declname>
+        </param>
+        <param>
+          <type>const Eigen::Vector3s &amp;</type>
+          <declname>compensated_accel</declname>
+        </param>
+        <briefdescription>
+<para>Update accumulated statistics with a new IMU measurement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unbiased_ang_vel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unbiased angular velocity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uncompensated_unbiased_accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Uncompensated, unbiased acceleration. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>compensated_accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gravity-compensated acceleration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="129" column="8" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="129" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="structrko__lio_1_1core_1_1IntervalStats_1a93353da910829b6fc1525b55d99fd280" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rko_lio::core::IntervalStats::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>rko_lio::core::IntervalStats::reset</qualifiedname>
+        <briefdescription>
+<para>Reset all accumulated statistics to zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="146" column="8" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="146" bodyend="153"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Accumulated IMU statistics over the interval between consecutive LiDAR scans. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>rko_lio::core::IntervalStats</label>
+        <link refid="structrko__lio_1_1core_1_1IntervalStats"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>imu_accel_mag_mean</edgelabel>
+          <edgelabel>welford_sum_of_squares</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scalar</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" line="104" column="1" bodyfile="/home/runner/work/rko_lio/rko_lio/rko_lio/core/util.hpp" bodystart="104" bodyend="154"/>
+    <listofallmembers>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1a4e2966e0e84a6b5824b24f3b7a63fc02" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>angular_velocity_sum</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1a5edfca29450269f3f4bce4670948d6b0" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>body_acceleration_sum</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1af1abe33ec46d8cedfad2bc74479a2c46" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>imu_accel_mag_mean</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1af96d42b3db00350ec398257e78606fbf" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>imu_acceleration_sum</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1ad03a2f9676e4eb163dc180dd707fd26c" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>imu_count</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1a93353da910829b6fc1525b55d99fd280" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>reset</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1aa21405300771c69fea6e8393362d4903" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>update</name></member>
+      <member refid="structrko__lio_1_1core_1_1IntervalStats_1af66327f9f7b18f90a4bb6d1a7be904f0" prot="public" virt="non-virtual"><scope>rko_lio::core::IntervalStats</scope><name>welford_sum_of_squares</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
